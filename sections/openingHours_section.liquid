@@ -1,0 +1,51 @@
+<section class="openingHours_section">
+<div class="page-width">
+  <div class="openingHours_content_container">
+    <div class="openingHours_wrapper">
+      <div class="openingHours__item">
+          <div class="openingHours_image">
+          {% if section.settings.image != blank %}
+            <img src="{{ section.settings.image.src | img_url: 'master' }}">
+          {% endif %}
+          </div>
+          <div class="openingHours_content">
+            <h1>{{ section.settings.openingHours_title }}</h1>
+            <ul class="opening_Hours_time">
+              <li><span class="day">Monday</span><span>9:00 AM - 5:00 PM</span></li>
+              <li><span class="day">Tuesday</span><span>9:00 AM - 5:00 PM</span></li>
+              <li><span class="day">Wednesday</span><span>9:00 AM - 5:00 PM</span></li>
+              <li><span class="day">Thursday</span><span>9:00 AM - 5:00 PM</span></li>
+              <li><span class="day">Friday</span><span>9:00 AM - 5:00 PM</span></li>
+              <li><span class="day">Saturday</span><span>By Appointment</span></li>
+              <li><span class="day">Sunday</span><span>Closed</span></li>
+            </ul>
+          </div>
+      </div>
+  </div>
+</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Opening Hours",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "html",
+      "id": "openingHours_title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Opening Hours"
+    }
+  ]
+}
+{% endschema %}
